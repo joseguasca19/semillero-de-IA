@@ -45,35 +45,44 @@ const sections = [
     icon: "◉",
     title: "¿QUIÉNES SOMOS?",
     text: "Somos el Semillero de Investigación con Inteligencia Artificial Aplicada (SIIA), conformado por estudiantes y docentes interesados en explorar los fundamentos, herramientas y aplicaciones de la IA en las matemáticas y otras áreas del conocimiento. Promovemos el aprendizaje colaborativo y el pensamiento científico.",
-    image: "https://images.unsplash.com/photo-1677442135136-760c813028c0?auto=format&fit=crop&w=1200&q=85"
+    image: "https://images.unsplash.com/photo-1677442135136-760c813028c0?auto=format&fit=crop&w=1200&q=85",
+    clickable: true
   },
   {
     id: "objetivos",
     icon: "◎",
     title: "OBJETIVOS",
     text: "• Fomentar la investigación en inteligencia artificial aplicada.\n• Desarrollar proyectos que integren la IA con las matemáticas y otras disciplinas.\n• Fortalecer las competencias investigativas de los semilleristas.\n• Divulgar los resultados obtenidos a la comunidad académica.",
-    image: "https://images.unsplash.com/photo-1744640326166-433469d102f2?auto=format&fit=crop&w=1200&q=85"
+    image: "https://images.unsplash.com/photo-1744640326166-433469d102f2?auto=format&fit=crop&w=1200&q=85",
+    clickable: true
   },
   {
     id: "mision",
     icon: "△",
     title: "MISIÓN",
     text: "Impulsar la formación investigativa de nuestros integrantes mediante el estudio y la aplicación de la inteligencia artificial, generando soluciones innovadoras que aporten valor a la comunidad académica y a la sociedad.",
-    image: "https://images.unsplash.com/photo-1737644467636-6b0053476bb2?auto=format&fit=crop&w=1200&q=85"
+    image: "https://images.unsplash.com/photo-1737644467636-6b0053476bb2?auto=format&fit=crop&w=1200&q=85",
+    clickable: true
   },
   {
     id: "proyecto",
     icon: "▢",
     title: "PROYECTO",
     text: "Nuestro proyecto explora cómo la inteligencia artificial puede aplicarse a la resolución de problemas matemáticos y científicos, desarrollando prototipos, modelos y herramientas que evidencian su potencial dentro del proceso investigativo del semillero.",
-    image: "https://images.unsplash.com/photo-1646583288948-24548aedffd8?auto=format&fit=crop&w=1200&q=85"
+    image: "https://images.unsplash.com/photo-1646583288948-24548aedffd8?auto=format&fit=crop&w=1200&q=85",
+    projects: [
+      { title: "Proyecto 1", url: "proyecto-1.html" },
+      { title: "Proyecto 2", url: "proyecto-2.html" },
+      { title: "Proyecto 3", url: "proyecto-3.html" }
+    ]
   },
   {
     id: "plan-de-trabajo",
     icon: "△",
     title: "PLAN DE TRABAJO",
     text: "Organizamos nuestro trabajo en fases: exploración conceptual de la inteligencia artificial, formación técnica de los integrantes, desarrollo de proyectos aplicados y socialización de resultados, fortaleciendo así el proceso investigativo del semillero.",
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=85"
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=85",
+    clickable: true
   }
 ];
 
@@ -148,13 +157,40 @@ function App() {
       <main className="main">
         <div className="container">
           {sections.map((section) => (
-            <section className="info-section" id={section.id} key={section.id}>
+            <section
+              className="info-section"
+              id={section.id}
+              key={section.id}
+              {...(section.clickable
+                ? {
+                    tabIndex: 0,
+                    role: "button",
+                    "aria-haspopup": "dialog",
+                    onClick: () => setActiveCard(section),
+                    onKeyDown: (e) => {
+                      if (e.key === "Enter" || e.key === " ") {
+                        e.preventDefault();
+                        setActiveCard(section);
+                      }
+                    }
+                  }
+                : {})}
+            >
               <div className="info-icon">{section.icon}</div>
               <div className="info-copy">
                 <h2>{section.title}</h2>
                 <p>{section.text}</p>
               </div>
               <div className="info-image" style={{backgroundImage: `url(${section.image})`}} />
+              {section.projects && (
+                <div className="project-grid">
+                  {section.projects.map((p) => (
+                    <a className="project-card" href={p.url} key={p.title}>
+                      <h4>{p.title}</h4>
+                    </a>
+                  ))}
+                </div>
+              )}
             </section>
           ))}
         </div>
@@ -211,7 +247,7 @@ function App() {
             <p className="eyebrow">SIIA</p>
             <h2>{activeCard.title}</h2>
             <div className="gold-line"></div>
-            <p>{activeCard.detail}</p>
+            <p>{activeCard.detail || activeCard.text}</p>
           </div>
         )}
       </div>
