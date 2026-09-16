@@ -190,6 +190,23 @@ a {
   border-bottom: 1px solid rgba(220, 220, 220, .26);
 }
 
+.info-section[data-card] {
+  cursor: pointer;
+  transition: opacity .2s;
+}
+
+.info-section[data-card]:hover,
+.info-section[data-card]:focus-visible {
+  opacity: .82;
+  outline: none;
+}
+
+.info-section[data-card]:hover .info-icon,
+.info-section[data-card]:focus-visible .info-icon {
+  border-color: #e3c46e;
+  color: #e3c46e;
+}
+
 .info-icon {
   width: 84px;
   height: 84px;
@@ -232,6 +249,46 @@ a {
   background-position: center;
   background-size: cover;
   border: 1px solid rgba(214, 174, 88, .35);
+}
+
+.project-grid {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 14px;
+  margin-top: 6px;
+}
+
+.project-card {
+  display: block;
+  padding: 20px 18px;
+  border: 1px solid rgba(214, 174, 88, .35);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, .03);
+  color: #f2f1ec;
+  transition: transform .2s, border-color .2s, background .2s;
+}
+
+.project-card:hover,
+.project-card:focus-visible {
+  transform: translateY(-4px);
+  border-color: #d8b461;
+  background: rgba(255, 255, 255, .06);
+  outline: none;
+}
+
+.project-card h4 {
+  margin: 0;
+  font-size: .95rem;
+  letter-spacing: .02em;
+  font-weight: 600;
+}
+
+.project-card span {
+  display: block;
+  margin-top: 6px;
+  font-size: .78rem;
+  color: #d7b360;
 }
 
 /* ---------- Contact ---------- */
@@ -335,6 +392,39 @@ a {
 
 /* ---------- Footer ---------- */
 
+.project-page-header {
+  padding: 64px 0 24px;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #d7b360;
+  font-size: .85rem;
+  margin-bottom: 26px;
+}
+
+.back-link:hover {
+  color: #e3c46e;
+}
+
+.project-page-header h1 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.4rem, 6vw, 3.6rem);
+  margin: 0 0 10px;
+  color: rgba(255, 255, 255, .9);
+}
+
+.project-page-body {
+  padding: 30px 0 110px;
+  min-height: 160px;
+  border-top: 1px solid rgba(220, 220, 220, .18);
+  color: #d5d4d0;
+  font-size: .95rem;
+  line-height: 1.7;
+}
+
 body.modal-open {
   overflow: hidden;
 }
@@ -380,8 +470,9 @@ body.modal-open {
   letter-spacing: .03em;
 }
 
-.card-modal p#cardModalBody {
+.card-modal p {
   margin: 0;
+  white-space: pre-line;
   color: #d5d4d0;
   font-size: .95rem;
   line-height: 1.7;
