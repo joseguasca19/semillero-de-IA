@@ -403,7 +403,6 @@ a {
 }
 
 .info-copy h2::before {
-  content: "0" counter(sec) " /";
   display: block;
   margin-bottom: 8px;
   font: 500 .72rem var(--font-mono);
