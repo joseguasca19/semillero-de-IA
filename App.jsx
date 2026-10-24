@@ -39,50 +39,47 @@ const destinations = [
   }
 ];
 
+// Cada apartado enlaza a su propia página (igual que index.html)
 const sections = [
   {
     id: "quienes-somos",
     icon: "◉",
     title: "¿QUIÉNES SOMOS?",
+    href: "QUIÉNES SOMOS.html",
     text: "Somos el Semillero de Investigación con Inteligencia Artificial Aplicada (SIIA), conformado por estudiantes y docentes interesados en explorar los fundamentos, herramientas y aplicaciones de la IA en las matemáticas y otras áreas del conocimiento. Promovemos el aprendizaje colaborativo y el pensamiento científico.",
-    image: "https://images.unsplash.com/photo-1677442135136-760c813028c0?auto=format&fit=crop&w=1200&q=85",
-    clickable: true
+    image: "https://images.unsplash.com/photo-1677442135136-760c813028c0?auto=format&fit=crop&w=1200&q=85"
   },
   {
     id: "objetivos",
     icon: "◎",
     title: "OBJETIVOS",
+    href: "OBJETIVOS.html",
     text: "• Fomentar la investigación en inteligencia artificial aplicada.\n• Desarrollar proyectos que integren la IA con las matemáticas y otras disciplinas.\n• Fortalecer las competencias investigativas de los semilleristas.\n• Divulgar los resultados obtenidos a la comunidad académica.",
-    image: "https://images.unsplash.com/photo-1744640326166-433469d102f2?auto=format&fit=crop&w=1200&q=85",
-    clickable: true
+    image: "https://images.unsplash.com/photo-1744640326166-433469d102f2?auto=format&fit=crop&w=1200&q=85"
   },
   {
     id: "mision",
     icon: "△",
     title: "MISIÓN",
+    href: "MISIÓN.html",
     text: "Impulsar la formación investigativa de nuestros integrantes mediante el estudio y la aplicación de la inteligencia artificial, generando soluciones innovadoras que aporten valor a la comunidad académica y a la sociedad.",
-    image: "https://images.unsplash.com/photo-1737644467636-6b0053476bb2?auto=format&fit=crop&w=1200&q=85",
-    clickable: true
+    image: "https://images.unsplash.com/photo-1737644467636-6b0053476bb2?auto=format&fit=crop&w=1200&q=85"
   },
   {
-    id: "proyecto",
+    id: "proyectos",
     icon: "▢",
-    title: "PROYECTO",
+    title: "PROYECTOS",
+    href: "PROYECTOS.html",
     text: "Nuestro proyecto explora cómo la inteligencia artificial puede aplicarse a la resolución de problemas matemáticos y científicos, desarrollando prototipos, modelos y herramientas que evidencian su potencial dentro del proceso investigativo del semillero.",
-    image: "https://images.unsplash.com/photo-1646583288948-24548aedffd8?auto=format&fit=crop&w=1200&q=85",
-    projects: [
-      { title: "Proyecto 1", url: "proyecto-1.html" },
-      { title: "Proyecto 2", url: "proyecto-2.html" },
-      { title: "Proyecto 3", url: "proyecto-3.html" }
-    ]
+    image: "https://images.unsplash.com/photo-1646583288948-24548aedffd8?auto=format&fit=crop&w=1200&q=85"
   },
   {
     id: "plan-de-trabajo",
-    icon: "△",
+    icon: "+",
     title: "PLAN DE TRABAJO",
+    href: "PLAN DE TRABAJO.html",
     text: "Organizamos nuestro trabajo en fases: exploración conceptual de la inteligencia artificial, formación técnica de los integrantes, desarrollo de proyectos aplicados y socialización de resultados, fortaleciendo así el proceso investigativo del semillero.",
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=85",
-    clickable: true
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=85"
   }
 ];
 
@@ -102,24 +99,23 @@ function App() {
 
   return (
     <>
-      <header className="hero">
+      <header className="hero" id="inicio">
         <nav className="nav container">
           <a className="brand" href="#inicio">◉ <span>SIIA</span></a>
           <div className="nav-links">
-            <a href="#quienes-somos">Quiénes somos</a>
+            <a href="#quienes-somos">¿Quiénes somos?</a>
             <a href="#objetivos">Objetivos</a>
             <a href="#mision">Misión</a>
-            <a href="#proyecto">Proyecto</a>
+            <a href="#proyectos">Proyectos</a>
             <a href="#plan-de-trabajo">Plan de trabajo</a>
             <a href="#contactos">Contactos</a>
           </div>
-          <a className="nav-button" href="#contactos">Contáctanos</a>
         </nav>
 
-        <div className="hero-content container" id="inicio">
+        <div className="hero-content container">
           <p className="eyebrow">SEMILLERO DE INVESTIGACIÓN</p>
           <h1>SIIA</h1>
-          <p className="hero-copy">Semillero de investigación con inteligencia artificial aplicada: qué es, cómo se usa y su impacto en la actualidad.</p>
+          <p className="hero-copy">Semillero de investigación con inteligencia artificial aplicada</p>
         </div>
 
         <div className="socials" aria-label="Redes sociales">
@@ -143,7 +139,7 @@ function App() {
                   setActiveCard(item);
                 }
               }}
-              style={{backgroundImage: `linear-gradient(to top, rgba(5,8,10,.95), rgba(5,8,10,.08)), url(${item.image})`}}
+              style={{backgroundImage: `url(${item.image})`}}
             >
               <div>
                 <h3>{item.title}</h3>
@@ -157,40 +153,13 @@ function App() {
       <main className="main">
         <div className="container">
           {sections.map((section) => (
-            <section
-              className="info-section"
-              id={section.id}
-              key={section.id}
-              {...(section.clickable
-                ? {
-                    tabIndex: 0,
-                    role: "button",
-                    "aria-haspopup": "dialog",
-                    onClick: () => setActiveCard(section),
-                    onKeyDown: (e) => {
-                      if (e.key === "Enter" || e.key === " ") {
-                        e.preventDefault();
-                        setActiveCard(section);
-                      }
-                    }
-                  }
-                : {})}
-            >
+            <section className="info-section" id={section.id} key={section.id}>
               <div className="info-icon">{section.icon}</div>
               <div className="info-copy">
-                <h2>{section.title}</h2>
+                <a className="section-link" href={section.href}><h2>{section.title}</h2></a>
                 <p>{section.text}</p>
               </div>
               <div className="info-image" style={{backgroundImage: `url(${section.image})`}} />
-              {section.projects && (
-                <div className="project-grid">
-                  {section.projects.map((p) => (
-                    <a className="project-card" href={p.url} key={p.title}>
-                      <h4>{p.title}</h4>
-                    </a>
-                  ))}
-                </div>
-              )}
             </section>
           ))}
         </div>
@@ -214,7 +183,7 @@ function App() {
             </div>
           </div>
 
-          <form className="contact-form" onSubmit={(e) => { e.preventDefault(); alert("¡Gracias! Tu mensaje ha sido enviado."); }}>
+          <form className="contact-form" onSubmit={(e) => { e.preventDefault(); alert("¡Gracias! Tu mensaje ha sido enviado."); e.target.reset(); }}>
             <h3>Escríbenos</h3>
             <input type="text" placeholder="Nombre completo" required />
             <input type="email" placeholder="Correo electrónico" required />
@@ -231,7 +200,7 @@ function App() {
           <p>© 2026 Semillero de Investigación con IA Aplicada · Todos los derechos reservados</p>
           <div className="footer-links">
             <a href="#quienes-somos">Nosotros</a>
-            <a href="#proyecto">Proyecto</a>
+            <a href="#proyectos">Proyectos</a>
             <a href="#contactos">Contacto</a>
           </div>
         </div>
@@ -247,7 +216,7 @@ function App() {
             <p className="eyebrow">SIIA</p>
             <h2>{activeCard.title}</h2>
             <div className="gold-line"></div>
-            <p>{activeCard.detail || activeCard.text}</p>
+            <p className="modal-body">{activeCard.detail}</p>
           </div>
         )}
       </div>
