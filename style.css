@@ -349,7 +349,6 @@ a {
   align-items: center;
   margin-bottom: 22px;
   padding: 30px;
-  counter-increment: sec;
   background: var(--panel);
   backdrop-filter: blur(10px);
   border: 1px solid var(--line);
