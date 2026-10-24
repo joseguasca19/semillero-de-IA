@@ -316,7 +316,6 @@ a {
 }
 
 .destination-card h3::before {
-  content: "0" counter(card);
   display: block;
   margin-bottom: 6px;
   font: 500 .66rem var(--font-mono);
@@ -456,7 +455,6 @@ a {
 }
 
 .info-section:has(.section-link) .info-copy p::after {
-  content: "Abrir sección →";
   display: block;
   margin-top: 16px;
   font: 500 .7rem var(--font-mono);
