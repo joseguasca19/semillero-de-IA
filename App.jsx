@@ -198,7 +198,7 @@ function App() {
             <h2>CONTACTOS</h2>
             <div className="gold-line"></div>
             <ul>
-              <li><span>✉</span> siia@investigacion.edu.co</li>
+              <li><span>✉</span> sima@investigacion.edu.co</li>
               <li><span>☎</span> +57 300 123 4567</li>
               <li><span>⌖</span> Popayán, Cauca, Colombia</li>
               <li><span>◷</span> Lun – Vie: 9:00 a.m. – 6:00 p.m.</li>
