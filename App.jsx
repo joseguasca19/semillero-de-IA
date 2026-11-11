@@ -49,35 +49,59 @@ const sections = [
     text: "Somos el Semillero de Investigación con Inteligencia Artificial Aplicada (SIIA), conformado por estudiantes y docentes interesados en explorar los fundamentos, herramientas y aplicaciones de la IA en las matemáticas y otras áreas del conocimiento. Promovemos el aprendizaje colaborativo y el pensamiento científico.",
     image: "https://images.unsplash.com/photo-1677442135136-760c813028c0?auto=format&fit=crop&w=1200&q=85"
   },
+   {
+    id: "Integrantes",
+    icon: "◉",
+    title: "Integrantes",
+    href: "Integrantes.html",
+    text: "Somos el Semillero de Investigación con Inteligencia Artificial Aplicada (SIIA), conformado por estudiantes y docentes interesados en explorar los fundamentos, herramientas y aplicaciones de la IA en las matemáticas y otras áreas del conocimiento. Promovemos el aprendizaje colaborativo y el pensamiento científico.",
+    image: "https://images.unsplash.com/photo-1677442135136-760c813028c0?auto=format&fit=crop&w=1200&q=85"
+  },
   {
     id: "objetivos",
     icon: "◎",
-    title: "OBJETIVOS",
-    href: "OBJETIVOS.html",
+    title: "Objetivos",
+    href: "Objetivos.html",
     text: "• Fomentar la investigación en inteligencia artificial aplicada.\n• Desarrollar proyectos que integren la IA con las matemáticas y otras disciplinas.\n• Fortalecer las competencias investigativas de los semilleristas.\n• Divulgar los resultados obtenidos a la comunidad académica.",
     image: "https://images.unsplash.com/photo-1744640326166-433469d102f2?auto=format&fit=crop&w=1200&q=85"
   },
   {
     id: "mision",
     icon: "△",
-    title: "MISIÓN",
-    href: "MISIÓN.html",
+    title: "Misión",
+    href: "Misión.html",
     text: "Impulsar la formación investigativa de nuestros integrantes mediante el estudio y la aplicación de la inteligencia artificial, generando soluciones innovadoras que aporten valor a la comunidad académica y a la sociedad.",
     image: "https://images.unsplash.com/photo-1737644467636-6b0053476bb2?auto=format&fit=crop&w=1200&q=85"
   },
   {
-    id: "proyectos",
-    icon: "▢",
-    title: "PROYECTOS",
-    href: "PROYECTOS.html",
-    text: "Nuestro proyecto explora cómo la inteligencia artificial puede aplicarse a la resolución de problemas matemáticos y científicos, desarrollando prototipos, modelos y herramientas que evidencian su potencial dentro del proceso investigativo del semillero.",
-    image: "https://images.unsplash.com/photo-1646583288948-24548aedffd8?auto=format&fit=crop&w=1200&q=85"
+    id: "vision",
+    icon: "△",
+    title: "Visión",
+    href: "Visión.html",
+    text: "Impulsar la formación investigativa de nuestros integrantes mediante el estudio y la aplicación de la inteligencia artificial, generando soluciones innovadoras que aporten valor a la comunidad académica y a la sociedad.",
+    image: "https://images.unsplash.com/photo-1737644467636-6b0053476bb2?auto=format&fit=crop&w=1200&q=85"
   },
   {
     id: "plan-de-trabajo",
     icon: "+",
-    title: "PLAN DE TRABAJO",
-    href: "PLAN DE TRABAJO.html",
+    title: "Plan de trabajo",
+    href: "Plan de trabajo.html",
+    text: "Organizamos nuestro trabajo en fases: exploración conceptual de la inteligencia artificial, formación técnica de los integrantes, desarrollo de proyectos aplicados y socialización de resultados, fortaleciendo así el proceso investigativo del semillero.",
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=85"
+  }
+  {
+    id: "proyectos",
+    icon: "▢",
+    title: "Proyectos",
+    href: "Proyectos.html",
+    text: "Nuestro proyecto explora cómo la inteligencia artificial puede aplicarse a la resolución de problemas matemáticos y científicos, desarrollando prototipos, modelos y herramientas que evidencian su potencial dentro del proceso investigativo del semillero.",
+    image: "https://images.unsplash.com/photo-1646583288948-24548aedffd8?auto=format&fit=crop&w=1200&q=85"
+  },
+  {
+    id: "productos",
+    icon: "+",
+    title: "Productos",
+    href: "Productos.html",
     text: "Organizamos nuestro trabajo en fases: exploración conceptual de la inteligencia artificial, formación técnica de los integrantes, desarrollo de proyectos aplicados y socialización de resultados, fortaleciendo así el proceso investigativo del semillero.",
     image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=85"
   }
