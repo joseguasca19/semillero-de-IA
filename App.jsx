@@ -196,7 +196,7 @@ function App() {
 
       <footer>
         <div className="container footer-content">
-          <div className="brand">◉ <span>SIIA</span></div>
+          <div className="brand">◉ <span>SIMA</span></div>
           <p>© 2026 Semillero de Investigación con IA Aplicada · Todos los derechos reservados</p>
           <div className="footer-links">
             <a href="#quienes-somos">Nosotros</a>
