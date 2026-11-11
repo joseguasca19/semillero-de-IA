@@ -44,13 +44,13 @@ const sections = [
   {
     id: "quienes-somos",
     icon: "◉",
-    title: "¿QUIÉNES SOMOS?",
-    href: "QUIÉNES SOMOS.html",
+    title: "¿Quiénes somos?",
+    href: "Quiénes somos.html",
     text: "Somos el Semillero de Investigación con Inteligencia Artificial Aplicada (SIIA), conformado por estudiantes y docentes interesados en explorar los fundamentos, herramientas y aplicaciones de la IA en las matemáticas y otras áreas del conocimiento. Promovemos el aprendizaje colaborativo y el pensamiento científico.",
     image: "https://images.unsplash.com/photo-1677442135136-760c813028c0?auto=format&fit=crop&w=1200&q=85"
   },
    {
-    id: "Integrantes",
+    id: "integrantes",
     icon: "◉",
     title: "Integrantes",
     href: "Integrantes.html",
@@ -125,20 +125,22 @@ function App() {
     <>
       <header className="hero" id="inicio">
         <nav className="nav container">
-          <a className="brand" href="#inicio">◉ <span>SIIA</span></a>
+          <a className="brand" href="#inicio">◉ <span>SIMA</span></a>
           <div className="nav-links">
             <a href="#quienes-somos">¿Quiénes somos?</a>
+            <a href="#integrantes">¿Integrantes</a>
             <a href="#objetivos">Objetivos</a>
             <a href="#mision">Misión</a>
-            <a href="#proyectos">Proyectos</a>
             <a href="#plan-de-trabajo">Plan de trabajo</a>
+            <a href="#proyectos">Proyectos</a>
+            <a href="#productos">Productos</a>
             <a href="#contactos">Contactos</a>
           </div>
         </nav>
 
         <div className="hero-content container">
           <p className="eyebrow">SEMILLERO DE INVESTIGACIÓN</p>
-          <h1>SIIA</h1>
+          <h1>SIMA</h1>
           <p className="hero-copy">Semillero de investigación con inteligencia artificial aplicada</p>
         </div>
 
